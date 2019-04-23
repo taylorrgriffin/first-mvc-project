@@ -12,8 +12,9 @@ namespace project.Controllers
     {
         public IActionResult Index()
         {
-            ErrorViewModel errorViewModel = new ErrorViewModel(); 
-            return View();
+            CalculatorViewModel calculatorViewModel = new CalculatorViewModel();
+            calculatorViewModel.pageTitle = "Calculator";
+            return View(calculatorViewModel);
         }
 
         public IActionResult About()
@@ -32,10 +33,6 @@ namespace project.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
