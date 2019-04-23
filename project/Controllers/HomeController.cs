@@ -10,10 +10,20 @@ namespace project.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             CalculatorViewModel calculatorViewModel = new CalculatorViewModel();
-            calculatorViewModel.pageTitle = "Calculator";
+            calculatorViewModel.PageTitle = "Calculator";
+            return View(calculatorViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Index(string equation)
+        {
+            CalculatorViewModel calculatorViewModel = new CalculatorViewModel();
+            calculatorViewModel.InputEquation = equation;
+            calculatorViewModel.Derivative = equation;
             return View(calculatorViewModel);
         }
 

@@ -14,6 +14,10 @@ namespace project.Models
 
         }
 
-        public string pageTitle { get; set; }
+        public string PageTitle { get; set; }
+
+        public string InputEquation { get; set; }
+
+        public string Derivative { get; set; }
     }
 }

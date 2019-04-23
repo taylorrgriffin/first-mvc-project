@@ -1,3 +1,26 @@
 ﻿@model CalculatorViewModel
 
-<h1>@Model.pageTitle</h1>
+<h1>@Model.PageTitle</h1>
+
+<p>
+    This utility allows one to graph a function, as well as compute and graph the derivative.
+    Please enter the function below.
+</p>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="inputEquation">f(x) = </label>
+        <input type="text" name="equation" />
+        <input type="submit" class="btn btn-default" value="Calculate" />
+
+    </div>
+}
+
+@if (Model.InputEquation != null)
+{
+    <p>f(x) = @Model.InputEquation</p>
+}
+@if (Model.Derivative != null)
+{
+    <p>f'(x) = @Model.Derivative</p>
+}
