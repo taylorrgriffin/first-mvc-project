@@ -1,2 +1,4 @@
-/project/bin/
-/project/obj/
+/project/bin/**
+/project/obj/**
+project.sln
+*.csproj

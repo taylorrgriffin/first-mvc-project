@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using project.Models;
 
 namespace project.Models
 {
@@ -11,13 +12,17 @@ namespace project.Models
     {
         public void OnGet()
         {
+            //Calculation = new Calculation();
+        }
 
+        public CalculatorViewModel()
+        {
+            Calculation = new Calculation();
         }
 
         public string PageTitle { get; set; }
 
-        public string InputEquation { get; set; }
+        public Calculation Calculation { get; set; }
 
-        public string Derivative { get; set; }
     }
 }

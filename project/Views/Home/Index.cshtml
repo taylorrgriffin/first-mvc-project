@@ -16,11 +16,11 @@
     </div>
 }
 
-@if (Model.InputEquation != null)
+@if (Model.Calculation.InputEquation.contents != null)
 {
-    <p>f(x) = @Model.InputEquation</p>
+    <p>f(x) = @Model.Calculation.InputEquation.contents</p>
 }
-@if (Model.Derivative != null)
+@if (Model.Calculation.OutputEquation.contents != null)
 {
-    <p>f'(x) = @Model.Derivative</p>
+    <p>f'(x) = @Model.Calculation.OutputEquation.contents</p>
 }

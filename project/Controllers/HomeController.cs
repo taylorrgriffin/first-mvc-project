@@ -21,10 +21,11 @@ namespace project.Controllers
         [HttpPost]
         public IActionResult Index(string equation)
         {
-            CalculatorViewModel calculatorViewModel = new CalculatorViewModel();
-            calculatorViewModel.InputEquation = equation;
-            calculatorViewModel.Derivative = equation;
-            return View(calculatorViewModel);
+            CalculatorViewModel viewModel = new CalculatorViewModel();
+            viewModel.Calculation.InputEquation.contents = equation;
+            viewModel.Calculation.OutputEquation.contents = equation + " (fake output for now)";
+
+            return View(viewModel);
         }
 
         public IActionResult About()
