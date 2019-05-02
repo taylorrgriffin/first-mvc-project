@@ -8,11 +8,12 @@ using project.Models;
 
 namespace project.Models
 {
+
     public class CalculatorViewModel : PageModel
     {
         public void OnGet()
         {
-            //Calculation = new Calculation();
+            Calculation = new Calculation();
         }
 
         public CalculatorViewModel()

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using project.Models;
+using project.NetworkUtils;
 
 namespace project.Controllers
 {
@@ -23,7 +24,18 @@ namespace project.Controllers
         {
             CalculatorViewModel viewModel = new CalculatorViewModel();
             viewModel.Calculation.InputEquation.contents = equation;
-            viewModel.Calculation.OutputEquation.contents = equation + " (fake output for now)";
+
+            Client client = new Client("derive", equation);
+            Response res = client.NewtonQuery();
+
+            if(res != null)
+            {
+                viewModel.Calculation.OutputEquation.contents = res.result;
+            }
+            else
+            {
+                viewModel.Calculation.OutputEquation.contents = "Invalid Input";
+            }
 
             return View(viewModel);
         }
